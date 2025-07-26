@@ -1,22 +1,14 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-// import Hearder from './components/hearder';
-import Header from './components/Header';
-import Menu from './components/Menu';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import App from "./App";
+import Header from "./components/Header";
+import "./index.css"; 
+import Menu from "./components/Menu";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <Header/>
     <Menu/>
-    <App />
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();

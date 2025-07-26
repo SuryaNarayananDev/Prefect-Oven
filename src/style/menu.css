@@ -1,0 +1,64 @@
+/* Add to menu.css */
+.modal {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.modal-content {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  text-align: center;
+}
+.card {
+  background: #fff;
+  border: 2px solid #eee;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding: 24px 32px;
+  margin: 16px;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: box-shadow 0.2s;
+  text-align: center;
+  min-width: 200px;
+  max-width: 300px;
+  flex: 1 1 220px;
+}
+.card:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+  border-color: #ff9800;
+}
+.menu-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 32px;
+}
+
+/* Mobile styles */
+@media (max-width: 100px) {
+  .menu-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+  }
+  .card {
+    width: 90vw;
+    height: 10vh;
+    min-width: unset;
+    max-width: unset;
+    margin: 8px 0;
+    font-size: 1.1rem;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}
