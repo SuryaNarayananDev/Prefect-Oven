@@ -3,7 +3,9 @@ import '../style/menu.css';
 
 const items = [
 { name: "Boiled Egg 🥚", time: 600, temp: 100 },
-  { name: "Baked Lasagna 🍝", time: 493, temp: 170 },
+{name:"PopCorn 🍿", time: 300, temp: 180 },
+{ name: "Baked Cookies 🍪", time: 900, temp: 180 },
+{ name: "Baked Lasagna 🍝", time: 493, temp: 170 },
 { name: "Roast Chicken 🍗", time: 781, temp: 160 },
 { name: "Chocolate Cake 🎂", time: 476, temp: 220 },
 { name: "Garlic Bread 🥖", time: 384, temp: 220 },
@@ -157,7 +159,7 @@ function Menu() {
 
   return (
     <div className="menu-outer">
-      
+
       <input
         type="text"
         placeholder="Search dish..."
