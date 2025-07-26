@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../style/menu.css';
 
 const items = [
+{ name: "Boiled Egg 🥚", time: 600, temp: 100 },
   { name: "Baked Lasagna 🍝", time: 493, temp: 170 },
 { name: "Roast Chicken 🍗", time: 781, temp: 160 },
 { name: "Chocolate Cake 🎂", time: 476, temp: 220 },
@@ -106,10 +107,12 @@ const items = [
 ];
 
 function Menu() {
+  const [search, setSearch] = useState('');
   const [selected, setSelected] = useState(null);
   const [timer, setTimer] = useState(0);
   const [showModal, setShowModal] = useState(false);
   const [isStarted, setIsStarted] = useState(false);
+  const audioRef = useRef(null);
 
   useEffect(() => {
     let interval = null;
@@ -121,6 +124,10 @@ function Menu() {
       setIsStarted(false);
       setSelected(null);
       setShowModal(false);
+      // Play sound
+      if (audioRef.current) {
+        audioRef.current.play();
+      }
     }
     return () => clearInterval(interval);
   }, [isStarted, timer]);
@@ -143,9 +150,30 @@ function Menu() {
     setTimer(0);
   };
 
+  // Filter items by search
+  const filteredItems = items.filter(item =>
+    item.name.toLowerCase().includes(search.toLowerCase())
+  );
+
   return (
     <div className="menu-container">
-      {items.map((item, index) => (
+      <input
+        type="text"
+        placeholder="Search dish..."
+        value={search}
+        onChange={e => setSearch(e.target.value)}
+        style={{
+          width: '90%',
+          maxWidth: 400,
+          margin: '0 auto 24px auto',
+          padding: '12px',
+          fontSize: '1rem',
+          borderRadius: '8px',
+          border: '1px solid #ccc',
+          display: 'block'
+        }}
+      />
+      {filteredItems.map((item, index) => (
         <div key={index} className="card" onClick={() => handleClick(item)}>
           {item.name}
         </div>
@@ -153,22 +181,25 @@ function Menu() {
       {showModal && selected && (
         <div className="modal">
           <div className="modal-content">
-            <h2>{selected.name}</h2>
-            <h3>Temperature : {selected.temp}</h3>
+            <p className='pop-title'>{selected.name}</p>
             <div className="timer">
               {Math.floor(timer / 60)}:{String(timer % 60).padStart(2, '0')}
             </div>
-            {!isStarted ? (
-              <>
-                <button onClick={handleStart}>Start</button>
-                <button onClick={handleClose}>Close</button>
-              </>
-            ) : (
-              <button onClick={handleClose}>Cancel</button>
-            )}
+            <div style={{ display: 'flex', justifyContent: 'center' }}>
+              {!isStarted ? (
+                <>
+                  <button className="timer-btn" onClick={handleStart}>Start</button>
+                  <button className="timer-btn" onClick={handleClose}>Close</button>
+                </>
+              ) : (
+                <button className="timer-btn" onClick={handleClose}>Cancel</button>
+              )}
+            </div>
           </div>
         </div>
       )}
+      {/* Hidden audio element for notification */}
+      <audio ref={audioRef} src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto" />
     </div>
   );
 }

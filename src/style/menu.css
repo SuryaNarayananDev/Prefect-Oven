@@ -9,14 +9,16 @@
   z-index: 1000;
 }
 .modal-content {
-  background: #fff;
+  background: #F28705;
+  border: 2px solid #d0bfab;
+  border-radius: 20px;
+  width: 500px;
   padding: 2rem;
-  border-radius: 8px;
   text-align: center;
 }
 .card {
   background: #fff;
-  border: 2px solid #eee;
+  border: 2px solid #F28705;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.08);
   padding: 24px 32px;
@@ -33,6 +35,37 @@
   box-shadow: 0 4px 16px rgba(0,0,0,0.18);
   border-color: #ff9800;
 }
+.timer{
+    font-size: 80px;
+    padding: 10px;
+    color: #fff;
+}
+.timer-btn {
+  background: #F2D541;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin: 0 8px; /* Add horizontal space between buttons */
+  margin-top: 12px; /* Optional: add space above buttons */
+}   
+
+.timer-btn:first-child {
+  margin-left: 0;
+}
+
+.timer-btn:last-child {
+  margin-right: 0;
+}
+
+.pop-title{
+    color: #d0bfab;
+    font-size: 40px;
+}
+
 .menu-container {
   display: flex;
   justify-content: center;
