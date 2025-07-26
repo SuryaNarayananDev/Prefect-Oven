@@ -4,7 +4,7 @@ function Header() {
   return (
     <header className="header">
       <div className="header-left ">
-        PrefectOven
+        SOFT-OVENING
       </div>
     </header>
   )

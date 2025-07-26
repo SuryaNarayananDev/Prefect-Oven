@@ -156,28 +156,22 @@ function Menu() {
   );
 
   return (
-    <div className="menu-container">
+    <div className="menu-outer">
+      
       <input
         type="text"
         placeholder="Search dish..."
         value={search}
         onChange={e => setSearch(e.target.value)}
-        style={{
-          width: '90%',
-          maxWidth: 400,
-          margin: '0 auto 24px auto',
-          padding: '12px',
-          fontSize: '1rem',
-          borderRadius: '8px',
-          border: '1px solid #ccc',
-          display: 'block'
-        }}
+        className="search-bar"
       />
-      {filteredItems.map((item, index) => (
-        <div key={index} className="card" onClick={() => handleClick(item)}>
-          {item.name}
-        </div>
-      ))}
+      <div className="menu-container">
+        {filteredItems.map((item, index) => (
+          <div key={index} className="card" onClick={() => handleClick(item)}>
+            {item.name}
+          </div>
+        ))}
+      </div>
       {showModal && selected && (
         <div className="modal">
           <div className="modal-content">
@@ -198,8 +192,7 @@ function Menu() {
           </div>
         </div>
       )}
-      {/* Hidden audio element for notification */}
-      <audio ref={audioRef} src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg" preload="auto" />
+      <audio ref={audioRef} src="https://actions.google.com/sounds/v1/alarms/whistle.ogg" preload="auto" />
     </div>
   );
 }
