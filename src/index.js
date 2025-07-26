@@ -3,10 +3,15 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+// import Hearder from './components/hearder';
+import Header from './components/Header';
+import Menu from './components/Menu';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Header/>
+    <Menu/>
     <App />
   </React.StrictMode>
 );
