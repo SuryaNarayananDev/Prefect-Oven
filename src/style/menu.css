@@ -94,7 +94,7 @@
 }
 
 /* Mobile styles */
-@media (max-width: 600px) {
+@media (max-width: 100px) {
   .menu-container {
     flex-direction: column;
     align-items: center;
