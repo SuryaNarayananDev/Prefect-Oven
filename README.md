@@ -9,7 +9,7 @@ Use it like a timer, feel like a chef 👨‍🍳.
 ## 🌍 Live Site
 
 WEBSITE 👉  [- LIVE -](https://softovening.vercel.app/)<br/>
-ANDROID 👉  [- DOWNLOAD -]()
+ANDROID 👉  [- Soon -]()
 
 ## 🧠 What's the idea?
 
